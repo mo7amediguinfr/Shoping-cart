@@ -36,20 +36,18 @@ let Data = [
     background-color: orange;
     width: 200px;
     padding: 10px;
-    margin-top: 10px;
+    // margin-top:10px;
+    margin: auto;
+    margin-top:10px;
   `;
   
   totalBlock.appendChild(totalText);
   container1.appendChild(totalBlock);
-//   let totalValue=0;
-//   quantityInput.value =totalValue;
-  
   function elements(products, prices, img,qte) {
     let card = document.createElement("div");
     let title = document.createElement("h1");
     let priceText = document.createElement("p");
     let quantityInput = document.createElement("input");
-    // console.log(quantityInput);
     quantityInput.value = parseInt(qte)
   
     let icon1 = document.createElement("i");
@@ -64,8 +62,6 @@ let Data = [
     priceText.appendChild(pricesContent);
     quantityInput.type = "number";
     quantityInput.min = 1;
-    // quantityInput.value = 1;
-    // totalValue =quantityInput.value;
     quantityInput.style.outline = "none";
     totalValue += qte * prices;
     totalText.nodeValue = "Total: " + totalValue  + "$";
@@ -82,7 +78,6 @@ let Data = [
     card.appendChild(icon1);
     card.appendChild(icon4);
     card.style.cssText = `
-      background-color:red;
       width:200px;
       padding:10px;
       margin-bottom:2px;
@@ -104,7 +99,7 @@ let Data = [
     `;
     icon1.onclick = function () {
       if (icon1.style.color === "red") {
-        icon1.style.color = "white";
+        icon1.style.color = "black";
       } else {
         icon1.style.color = "red";
       }
@@ -115,7 +110,7 @@ let Data = [
       totalText.nodeValue = "Total: " + totalValue + "$";
       container1.removeChild(card);
       if (icon4.style.color === "red") {
-        icon4.style.color = "white";
+        icon4.style.color = "black";
       } else {
         icon4.style.color = "red";
       }
